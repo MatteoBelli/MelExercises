@@ -1,0 +1,13 @@
+string $winName = "Window";
+//check if window with the same name exits, in case delete it
+if(`window -q -exists $winName`)
+{
+	deleteUI $winName;
+}
+//create window
+window $winName;
+	rowLayout -nc 2;
+		string $myText = `textField -editable true`;
+		button -l "print hello" -c "print(\"Welcome \" + `textField -q -tx $myText` + \"\\n\")";
+	setParent..;
+showWindow;

@@ -1,0 +1,6 @@
+//take selected objects
+string $selection[] = `ls -sl`;
+//get the size of selected objects
+int $count = size($selection);
+//print size
+print($count);

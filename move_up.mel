@@ -1,0 +1,4 @@
+//take selected objects
+string $selection[] = `ls -sl`;
+//move up
+move -r -os -wd 0 1.5 0

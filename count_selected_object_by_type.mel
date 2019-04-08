@@ -1,0 +1,29 @@
+//take selected objects
+string $selection[] = `ls -sl`;
+//initialize counters
+int $meshes_counter = 0;
+int $transforms_counter = 0;
+int $joints_counter = 0;
+//iter selected objects
+for($item in $selection)
+{
+	//get current object type
+	string $current_type = `nodeType $item`;
+	//check type and increase counter
+	if($current_type == "mesh")
+	{
+		$meshes_counter++;		
+	}
+	else if($current_type == "transform")
+	{
+		$transforms_counter++;			
+	}
+	else if($current_type == "joint")
+	{
+		$joints_counter++;		
+	}
+}
+//print counters
+print("selected meshes: " + $meshes_counter + "\n");
+print("selected transfroms: " + $transforms_counter + "\n");
+print("selected joints: " + $joints_counter + "\n");
